@@ -103,6 +103,6 @@ func getResults(results chan Stat, wg *sync.WaitGroup) {
 	total := time.Since(start)
 	rps := float64(successes+failures) / total.Seconds()
 
-	fmt.Printf("\nSuccesses: %d\nFailures: %d\nTotal Time: %d (ms)\nRequests Per Second: %d\n\nMin Request Time: %f (us)\nMean Request Time: %f (us)\nMax Request Time: %f (us)\n", successes, failures, total.Microseconds(), int(rps), minReqTime, meanReqTime, maxReqTime)
+	fmt.Printf("\nSuccesses: %d\nFailures: %d\nTotal Time: %d (ms)\nRequests Per Second: %d\n\nMin Request Time: %f (us)\nMean Request Time: %f (us)\nMax Request Time: %f (us)\n", successes, failures, total.Milliseconds(), int(rps), minReqTime, meanReqTime, maxReqTime)
 	wg.Done()
 }
